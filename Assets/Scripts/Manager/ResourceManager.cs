@@ -55,7 +55,7 @@ public class ResourceManager : ManagerBase
         resouce = null;
     }
 
-    public GameObject GetResourceScene(string key)
+    public GameObject GetResource(string key)
     {
         if (resourceTable.ContainsKey(key))
         {

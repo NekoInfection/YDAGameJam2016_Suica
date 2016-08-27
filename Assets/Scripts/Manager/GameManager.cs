@@ -20,16 +20,25 @@ public class GameManager : MonoBehaviour {
     private List<ManagerBase> managerList = new List<ManagerBase>();
     public List<ManagerBase> ManagerList { get { return managerList; } }
 
-    
 
 	void Awake () {
+
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
 
         var scene = SceneManager.Instance;
         var resources = ResourceManager.Instance;
 	}
-	
 
-
+    public T GetManager<T>(ManagerID managerID) where T : ManagerBase
+    {
+        foreach(ManagerBase manager in managerList)
+        {
+            if(manager.GetData.managerID == managerID)
+            {
+                return manager as T;
+            }
+        }
+        return null;
+    }
 }

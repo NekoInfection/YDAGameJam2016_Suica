@@ -5,6 +5,7 @@ public enum ManagerID
 {
     NULL,
     RESOURCES,
+    SCENE,
     EFFECT,
 }
 
@@ -34,5 +35,6 @@ public class ManagerBase : MonoBehaviour {
     {
         this.gameObject.SetActive(value);
     }
+
 
 }

@@ -5,7 +5,7 @@ using System.Collections;
 /// シーン管理用クラス
 /// </summary>
 
-public class SceneManager : MonoBehaviour {
+public class SceneManager : ManagerBase {
 
     /// <summary>
     /// 状態
@@ -107,6 +107,8 @@ public class SceneManager : MonoBehaviour {
     /// </summary>
     void Start()
     {
+        InitManager(this, ManagerID.SCENE);
+
         fadeManager = GetComponent<FadeManager>();
         fadeManager.StartFadeIn(fadeTime.inTime);
 
